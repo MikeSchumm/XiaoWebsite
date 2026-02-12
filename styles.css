@@ -1,0 +1,141 @@
+body{
+    /* background-color: pink; */
+    background-image: url("assets/background\ image.jpg");
+    background-size: 1500px 1000px;
+} 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;        /* allows multiple boxes */
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+.titleBox {
+    /* Dimensions */
+    width: 500px;
+    height: 150px;
+    
+    /* Appearance */
+    background-color: #FFD6E6; /* Light gray background */
+    border: 2px solid pink; 
+    border-radius: 25px;  /* 2px solid dark gray border */
+    
+    /* Spacing */
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;           
+    left: 50%;
+    margin-left:-250px; /*this is half of width of your div*/
+             
+
+    /* Text styling */
+    color: #4B2E8C;
+    font-family: "HeartFont";
+    text-align: center;
+    font-size: 75px;
+}
+
+@font-face {
+  font-family: "HeartFont"; /* A name you choose to refer to the font later */
+  src: url('assets/Sweety\ Love.ttf');
+  font-weight: normal; /* Define the weight (e.g., normal, bold, or a range) */
+  font-style: normal; /* Define the style (e.g., normal, italic) */
+  font-display: swap; /* Tells the browser how to handle the font while it's loading */
+}
+
+.catPic {
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-20%, -120%);
+}
+
+.buttonBox{
+    /* width: 1000px;
+    height: 200px;
+    
+    
+    background-color: #FFD6E6; 
+    border: 2px solid pink; 
+    border-radius: 25px;  
+     */
+    /* Spacing */
+    /* position: relative;
+    margin-top: 600px;
+    margin-left: 80px; */
+             
+
+    /* Text styling */
+    /* color: #4B2E8C;
+    font-family: "HeartFont";
+    text-align: center;
+    font-size: 75px; */
+    width: min(1000px, 90vw);
+    height: 200px;
+
+    background-color: #FFD6E6;
+    border: 2px solid pink;
+    border-radius: 25px;
+
+    position: relative;         /* anchor for absolute children */
+    margin: 0 auto;             /* center the box */
+    margin-top: 600px;           /* adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* centers the button */
+}
+
+
+
+.button{
+  position: absolute;  /* NOT fixed */
+  margin-left: -450px ;
+  width: 100px;
+  height: 90px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#heart::before,
+#heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+}
+
+#heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* text on top */
+.heartText {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.noBtn {
+  /* position: absolute;   */
+  margin-left: 450px;
+  pointer-events: none;
+  opacity: 0.6;
+}

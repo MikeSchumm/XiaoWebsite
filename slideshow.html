@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 Slideshow</title>
+  <link rel="stylesheet" href="slideshow.css">
+  <style>
+    body { margin: 0; display: grid; place-items: center; min-height: 100vh; font-family: Arial; }
+    
+    .controls { margin-top: 12px; display: flex; gap: 12px; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; cursor: pointer; }
+  </style>
+</head>
+<body>
+    <audio id="bgMusic"  loop>
+        <source src="assets/HER_-_Best_Part_CeeNaija.com_.mp3" type="audio/mpeg">
+    </audio>
+  <div class="frame">
+    <img class="active" src="assets/XiaoPic1.jpg" alt="">
+    <img src="assets/Xiaopic2.jpg" alt="">
+    <img src="assets/XiaoPic3.jpg" alt="">
+    <img src="assets/XiaoPic4.jpg" alt="">
+    <img src="assets/XiaoPic5.jpg" alt="">
+    <img src="assets/XiaoPic6.jpg" alt="">
+    <img src="assets/XiaoPic7.jpg" alt="">
+    <img src="assets/XiaoPic8.jpg" alt="">
+    <img src="assets/XiaoPic9.jpg" alt="">
+    <img src="assets/XiaoPic10.jpg" alt="">
+    <img src="assets/XiaoPic11.jpg" alt="">
+    <img src="assets/XiaoPic12.jpg" alt="">
+    <img src="assets/XiaoPic13.jpg" alt="">
+    <img src="assets/XiaoPic14.jpg" alt="">
+    <img src="assets/XiaoPic15.jpg" alt="">
+    <img src="assets/XiaoPic16.jpg" alt="">
+    <img src="assets/XiaoPic17.jpg" alt="">
+    <img src="assets/XiaoPic18.jpg" alt="">
+    <img src="assets/XiaoPic19.jpg" alt="">
+    <img src="assets/XiaoPic20.jpg" alt="">
+        </div>
+        <p class="loveMessage">
+            Thank you for an amazing 5 years sweetie here’s to 500 more 💖
+        </p>
+
+        <button id="musicToggle">Play Music</button>
+  <div class="controls">
+    <button id="prev">← Prev</button>
+    <button id="next">Next →</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".frame img"));
+    let i = 0;
+
+    function show(index){
+      slides[i].classList.remove("active");
+      i = (index + slides.length) % slides.length;
+      slides[i].classList.add("active");
+    }
+
+    document.getElementById("next").addEventListener("click", () => show(i + 1));
+    document.getElementById("prev").addEventListener("click", () => show(i - 1));
+
+    // auto-advance every 2.5s (optional)
+    setInterval(() => show(i + 1), 2500);
+  </script>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  const toggleBtn = document.getElementById("musicToggle");
+
+  // Start music on first interaction
+
+
+  toggleBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      toggleBtn.textContent = "Pause Music";
+    } else {
+      music.pause();
+      toggleBtn.textContent = "Play Music";
+    }
+  });
+</script>
+
+</body>
+</html>
+
+<!-- .frame { width: min(900px, 95vw); height: min(550px, 70vh); position: relative; overflow: hidden; border-radius: 16px; }
+    .frame img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s; }
+    .frame img.active { opacity: 1; } -->

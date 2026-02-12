@@ -1,0 +1,47 @@
+body{
+    /* background-color: pink; */
+    background-image: url("assets/background\ image.jpg");
+    background-size: 1500px 1000px;
+} 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;        /* allows multiple boxes */
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.frame {
+  width: min(900px, 95vw);
+  height: min(550px, 70vh);
+  position: relative;
+  overflow: hidden;
+  background: pink;                 /* optional */
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.frame img.active {
+  opacity: 1;
+}
+
+.loveMessage {
+  margin-top: 45px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ff4d6d;
+  font-weight: bold;
+}
